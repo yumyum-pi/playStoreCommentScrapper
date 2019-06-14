@@ -1,0 +1,8 @@
+#node modules ignore
+node_modules/*
+
+#mac storage file
+*.DS_Store
+
+#ignore package lock file
+package-lock.json
