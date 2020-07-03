@@ -1,15 +1,9 @@
 const puppeteer = require('puppeteer');
 const otcsv = require('objects-to-csv');
+const fs = require('fs');
 
-const apps = [
-    {name: 'Wynk', url: 'https://play.google.com/store/apps/details?id=com.bsbportal.music&showAllReviews=true'},
-    {name: 'Gaana', url: 'https://play.google.com/store/apps/details?id=com.gaana&showAllReviews=true'},
-    {name: 'Amazon Music', url:'https://play.google.com/store/apps/details?id=com.amazon.mp3&showAllReviews=true'},
-    {name: 'JioSaavn', url: 'https://play.google.com/store/apps/details?id=com.jio.media.jiobeats&showAllReviews=true'},
-    {name: 'Spotify', url: 'https://play.google.com/store/apps/details?id=com.spotify.music&showAllReviews=true'},
-    {name: 'Google Play Music', url: 'https://play.google.com/store/apps/details?id=com.google.android.music&showAllReviews=true'},
-    {name: 'Hungama', url: 'https://play.google.com/store/apps/details?id=com.hungama.myplay.activity&showAllReviews=true'},
-];
+let rawdata = fs.readFileSync('config.json');
+let apps = JSON.parse(rawdata);
 
 const outPutfilePath = './resource/csv/main.csv';
 var waitingInterval = 250;
